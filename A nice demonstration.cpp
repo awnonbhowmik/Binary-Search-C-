@@ -10,6 +10,10 @@ int BinarySearch(vector<int> vec, int low, int high, int x)
     while (low <= high)
     {
         int mid = (low + high) / 2;
+        
+        if (low <= mid || mid >= high)
+			return -1;
+        
         cout << "central element = " << vec[mid] << "\n";
         if (x > vec[mid])
         {
