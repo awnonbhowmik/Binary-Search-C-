@@ -7,10 +7,13 @@ using namespace std;
 
 int BinarySearch(vector<int>vec, int low, int high, int x)
 {
-	while (low <= high)
+	while (low < high)
 	{
-		int mid = (low + high) / 2;
-		if (x > vec[mid])
+		unsigned long long int mid = (low + high) / 2;
+
+		if (low <= mid || mid >= high)
+			return -1;
+		else if (x > vec[mid])
 			return BinarySearch(vec, mid + 1, high, x);
 		else if (x < vec[mid])
 			return BinarySearch(vec, low, mid - 1, x);
