@@ -11,8 +11,8 @@ int BinarySearch(vector<int> vec, int low, int high, int x)
     {
         int mid = (low + high) / 2;
         
-        if (low <= mid || mid >= high)
-		return -1;
+        if (mid < low || mid > high)
+          return -1;
         
         cout << "central element = " << vec[mid] << "\n";
         if (x > vec[mid])
